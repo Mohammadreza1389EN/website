@@ -1,0 +1,70 @@
+    @font-face {
+        font-family: 'IRANSans';
+        src: url('fonts/IRANSansWeb.woff2') format('woff2'),
+             url('fonts/IRANSansWeb.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'IRANSans', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #0a192f; /* آبی تیره */
+        color: #ccd6f6; /* رنگ متن روشن */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+        text-align: center; /* برای متن‌ها */
+    }
+
+    .container {
+        max-width: 900px; /* حداکثر عرض محتوا */
+        margin: 20px;
+        padding: 30px;
+        background-color: rgba(10, 25, 47, 0.85); /* کمی شفافیت برای محتوا */
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #64ffda; /* رنگ آبی-سبز */
+        text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+    }
+
+    p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .image-section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .video-section {
+        margin-bottom: 30px;
+        position: relative;
+        width: 100%;
+        max-width: 720px; 
+            margin-left: auto;
+        margin-right: auto;
+    }
+
+    .video-section video {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+
+

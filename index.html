@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interstellar Hub - My Smart Quadcopter</title>
+    <!-- استایل‌های CSS -->
+    <style>
+        /* فونت‌های فارسی */
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url('fonts/Vazirmatn-Regular.woff2') format('woff2'),
+                 url('fonts/Vazirmatn-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url('fonts/Vazirmatn-Bold.woff2') format('woff2'),
+                 url('fonts/Vazirmatn-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* استایل‌های کلی */
+        body {
+            font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #020017; /* پس‌زمینه روشن و ملایم */
+            color: #d5f3f7;
+            line-height: 1.7;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px; /* حداکثر عرض محتوا */
+            width: 100%;
+            background-color: #303031; /* پس‌زمینه سفید برای محتوا */
+            padding: 30px;
+            border-radius: 12px; /* گوشه‌های گرد */
+            box-shadow: 0 8px 20px rgba(224, 223, 223, 0.1); /* سایه ملایم */
+            text-align: center;
+        }
+
+        h1 {
+            color: #fcfdff; /* رنگ آبی تیره برای عنوان اصلی */
+            font-size: 2.8em; /* اندازه بزرگتر فونت */
+            margin-bottom: 20px;
+            border-bottom: 3px solid #150155; /* خط زیر عنوان */
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            text-align: justify; /* راست‌چین برای پاراگراف‌های فارسی */
+            hyphens: auto; /* برای شکستن کلمات در صورت نیاز */
+        }
+
+        /* استایل برای بخش لینک گیت‌هاب */
+        .github-link {
+            display: block;
+            margin: 25px auto;
+            padding: 12px 25px;
+            background-color: #08013d; /* رنگ سبز */
+            color: white !important; /* رنگ سفید برای متن لینک */
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            max-width: fit-content; /* عرض متناسب با محتوا */
+        }
+        .github-link:hover {
+            background-color: #1a791d; /* سبز تیره‌تر در هاور */
+            transform: translateY(-2px); /* کمی بالا رفتن */
+        }
+
+        /* استایل برای بخش ایمیل */
+        .email-link {
+            color: #b2d3f4 !important; /* آبی تیره برای ایمیل */
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        /* بخش عکس */
+        .image-section {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden; /* برای نمایش گوشه‌های گرد عکس */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .image-section img {
+            display: block; /* حذف فضای اضافی زیر عکس */
+            width: 100%; /* عکس همیشه عرض کانتینر را پر کند */
+            height: auto; /* ارتفاع خودکار برای حفظ نسبت */
+            max-width: 100%; /* اطمینان از اینکه از کانتینر بیرون نزند */
+        }
+
+        /* بخش ویدیو */
+        .video-section {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 56.25%; /* نسبت تصویر 16:9 */
+            height: 0;
+            overflow: hidden;
+            background-color: #000; /* پس‌زمینه سیاه برای ویدیو */
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .video-section video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-section p {
+             text-align: center; /* وسط‌چین برای متن کنار ویدیو */
+             margin-top: 10px;
+             font-size: 1.1em;
+             color: #555;
+        }
+
+        /* برای واکنش‌گرایی در موبایل */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em; /* فونت کوچکتر برای موبایل */
+            }
+            p {
+                font-size: 1em; /* فونت کوچکتر برای موبایل */
+                text-align: right; /* راست‌چین معمولی برای موبایل */
+            }
+            .container {
+                padding: 20px; /* padding کمتر در موبایل */
+            }
+            .github-link {
+                font-size: 1.1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- بخش عنوان اصلی -->
+        <h1>My Smart Quadcopter Project</h1>
+
+        <!-- بخش متن اول -->
+        <p>
+            سلام! من محمدرضا اسدی هستم از زنجان، ایران. این اولین کوادکوپتر منه که با زبان برنامه‌نویسی C++ برنامه‌نویسی کردم. این کوادکوپتر حدود ۵۰ سانتی‌متر طول و عرض داره و با چهار موتور براشلس KV1000 کنترل می‌شه. جالبه که این کوادکوپتر از طریق گوشی موبایل کنترل می‌شه و نیازی به کنترل رادیویی نداره. برد کنترل پرواز این کوادکوپتر از چیپ atmega2560 استفاده می‌کنه که تفاوتی با برد آردوینو نداره. برای ارتباط با گوشی هم از ESP8266 استفاده شده.
+        </p>
+        <p>
+            اگر علاقه‌مند به جزئیات فنی و مشاهده کدها هستید، تمام سورس کدها، برنامه و منابع در صفحه گیت‌هاب من موجود است.
+        </p>
+
+        <!-- لینک گیت‌هاب -->
+        <a href="https://github.com/Mohammadreza1389EN/quadcopter-drone-project.git" class="github-link" target="_blank" rel="noopener noreferrer">
+            بازدید از صفحه گیت‌هاب پروژه
+        </a>
+
+        <!-- بخش ایمیل -->
+        <p>
+            ایمیل من: <a href="mailto:m82971311@gmail.com" class="email-link">m82971311@gmail.com</a>
+        </p>
+
+        <!-- بخش عکس -->
+        <div class="image-section">
+            <!-- نام فایل عکس خود را اینجا جایگزین کنید -->
+            <img src="quadcopter_image.jpg" alt="تصویری از کوادکوپتر من">
+        </div>
+        <p>این ویدیو مربوط به اولین پرواز من با کوادکوپتر است که بدنه آن پس از یک ماه تغییر کرد :<p> </p>
+        <!-- بخش ویدیو -->
+        <div class="video-section">
+            <p>ویدیو پرواز کوادکوپتر من:</p>
+            <!-- نام فایل ویدیو خود را اینجا جایگزین کنید -->
+            <video controls autoplay loop muted playsinline>
+                <source src="quadcopter_video.mp4" type="video/mp4">
+                مرورگر شما از پخش این فایل ویدیویی پشتیبانی نمی‌کند.
+            </video>
+        </div>
+
+        <!-- بخش متن دوم (درباره آینده) -->
+        <p>
+            در آینده، ما رؤیای ساخت کوادکوپترهای پیشرفته‌تر و حتی سفینه‌های فضایی را در سر می‌پرورانیم. با ما همراه باشید تا آخرین اخبار و تحولات در زمینه هوافضا و اکتشافات فضایی را دنبال کنید. اسرار ناشناخته کیهان در انتظار کشف شدن هستند.
+        <p></p>
+            <p> Hello! I am Mohammad Reza Asadi from Zanjan, Iran. This is my first quadcopter that I programmed with the C++ programming language. This quadcopter is about 50 cm long and wide and is controlled by four KV1000 brushless motors. Interestingly, this quadcopter is controlled via a mobile phone and does not require a radio control. The flight control board of this quadcopter uses an atmega2560 chip, which is no different from an Arduino board. ESP8266 is also used to communicate with the phone.
+            If you are interested in technical details and viewing the codes, all the source codes, programs, and resources are available on my GitHub page.<p>
+            In the future, we dream of building more advanced quadcopters and even spaceships. Stay tuned to follow the latest news and developments in aerospace and space exploration. The unknown secrets of the universe are waiting to be discovered.
+            </p>
+    </div>
+    <!-- فایل‌های فونت باید در پوشه‌ای به نام fonts در کنار فایل HTML شما باشند -->
+    <!-- اگر فونت Vazirmatn را ندارید، می‌توانید آن را از وبسایت آن دانلود کرده و در پوشه fonts قرار دهید -->
+    <!-- یا فونت دیگری را جایگزین کنید یا لینک CDN فونت را اضافه کنید -->
+</body>
+</html>
